@@ -36,7 +36,7 @@
 #define DEBUG_AUDIOSTREAM 0
 
 #ifdef __SSE3__
-#define HAVE_SSE3_INTRINSICS 1
+#define HAVE_SSE3_INTRINSICS 0
 #endif
 
 #if HAVE_SSE3_INTRINSICS

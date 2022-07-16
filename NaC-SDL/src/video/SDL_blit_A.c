@@ -574,7 +574,7 @@ BlitRGBtoRGBPixelAlpha(SDL_BlitInfo * info)
         dstp += dstskip;
     }
 }
-
+#undef __3dNOW__
 #ifdef __3dNOW__
 /* fast (as in MMX with prefetch) ARGB888->(A)RGB888 blending with pixel alpha */
 static void

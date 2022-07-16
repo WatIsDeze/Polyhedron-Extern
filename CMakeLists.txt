@@ -58,6 +58,23 @@ if(CONFIG_USE_CURL)
 endif()
 
 #
+# FMT
+#
+
+#OPTION(FMT_INSTALL OFF)
+#SET(fmt_DIR fmt/include/)
+set(fmt_DIR "${CMAKE_CURRENT_SOURCE_DIR}/fmt")
+OPTION(FMT_HEADER_ONLY TRUE)
+add_subdirectory(${fmt_DIR} EXCLUDE_FROM_ALL)
+#set_target_properties(fmt-header-only PROPERTIES FOLDER extern)
+#add_library(fmt INTERFACE)
+#set_target_properties(fmt PROPERTIES FOLDER extern)
+
+#FIND_PACKAGE(fmt REQUIRED)
+#add_library(fmt INTERFACE)
+#target_include_directories(fmt INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/fmt/include/)
+
+#
 # STB
 #
 add_library(stb INTERFACE)
@@ -91,9 +108,9 @@ if (CONFIG_ENABLE_RMLUI)
 
     set(CURL_CA_PATH "none" CACHE PATH "")
 
-    add_subdirectory(Nac-RmlUi)
+    #add_subdirectory(Nac-RmlUi)
 
-    set_target_properties(RmlCore PROPERTIES FOLDER extern)
-    set_target_properties(RmlDebugger PROPERTIES FOLDER extern)
-    set_target_properties(RmlLua PROPERTIES FOLDER extern)
+    #set_target_properties(RmlCore PROPERTIES FOLDER extern)
+    #set_target_properties(RmlDebugger PROPERTIES FOLDER extern)
+    #set_target_properties(RmlLua PROPERTIES FOLDER extern)
 endif()
